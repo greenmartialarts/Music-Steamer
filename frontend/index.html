@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Music Streamer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🎵 Local Music Streamer</h1>
+        </header>
+
+        <main>
+            <section id="library">
+                <h2>Tracks</h2>
+                <ul id="track-list"></ul>
+            </section>
+
+            <section id="playlists">
+                <h2>Playlists</h2>
+                <div id="playlist-controls">
+                    <input type="text" id="new-playlist-name" placeholder="Playlist Name">
+                    <button id="create-playlist">Create</button>
+                </div>
+                <ul id="playlist-list"></ul>
+            </section>
+        </main>
+
+        <div id="playlist-modal" class="modal">
+            <div class="modal-content">
+                <h3>Add to Playlist</h3>
+                <ul id="modal-playlist-list"></ul>
+                <button id="close-modal">Cancel</button>
+            </div>
+        </div>
+
+        <footer>
+            <div id="player-info">
+                <span id="current-track-title">No track playing</span>
+                <span id="current-track-artist"></span>
+            </div>
+            <audio id="audio-player" controls>
+                Your browser does not support the audio element.
+            </audio>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
