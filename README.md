@@ -16,6 +16,31 @@ Minimal, clean web UI
 
 Runs on localhost, no public hosting required
 
+How to Run
+
+1. Install Dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Scan Your Music:
+   Place your music files in the `music/` folder, then run the scanner:
+   ```bash
+   python3 -m backend.scanner music
+   ```
+
+3. Start the Backend:
+   ```bash
+   uvicorn backend.main:app --host 0.0.0.0 --port 8000
+   ```
+
+4. Start the Frontend:
+   You can serve the `frontend/` folder using any web server. For example:
+   ```bash
+   cd frontend && python3 -m http.server 3000
+   ```
+   Then open `http://localhost:3000` in your browser.
+
 Tech Stack
 
 Backend: Python + FastAPI
