@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+mutagen
+sqlalchemy
+python-multipart
+httpx
