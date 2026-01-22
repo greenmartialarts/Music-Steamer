@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000';
+const API_URL = '';
 
 const trackList = document.getElementById('track-list');
 const playlistList = document.getElementById('playlist-list');

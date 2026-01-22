@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from fastapi import FastAPI, Depends, HTTPException, Header, Request
 from fastapi.responses import StreamingResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from . import models, database
 from .database import engine, get_db
@@ -134,3 +135,6 @@ def get_playlist(playlist_id: int, db: Session = Depends(get_db)):
 
     tracks = db.query(models.Track).join(models.PlaylistTrack).filter(models.PlaylistTrack.playlist_id == playlist_id).order_by(models.PlaylistTrack.order).all()
     return {"id": playlist.id, "name": playlist.name, "tracks": tracks}
+
+# Serve Frontend
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
